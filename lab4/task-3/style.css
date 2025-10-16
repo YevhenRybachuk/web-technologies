@@ -1,0 +1,40 @@
+a {
+  color: purple;
+}
+.text_main_color {
+  color: green;
+}
+.third_list {
+  list-style-type: square;
+}
+.second_list {
+  list-style: none;
+  padding-left: 25px;
+}
+
+.second_list li {
+  position: relative;
+  padding-left: 20px;
+}
+
+.second_list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background-image: url("../img/images.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+ul li ul {
+  list-style: none;
+}
+.third_list a {
+  text-decoration: none;
+}
+.fourth_list {
+  list-style-position: inside;
+}
