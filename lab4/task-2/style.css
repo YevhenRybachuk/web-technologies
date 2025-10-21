@@ -1,24 +1,38 @@
-.text_align {
+* {
   text-align: center;
+
+  box-sizing: border-box;
 }
-.text_h1 {
+
+.title {
   color: red;
-  font-size: 50px;
 }
-.text_h2 {
-  font-size: 35px;
+
+.ingredients {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 5px;
+  line-height: 0.8;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.note {
+  margin-top: 10px;
   font-style: italic;
+  border-top: 5px green solid;
+  margin-left: 30%;
+  margin-right: 30%;
 }
-.text_size {
-  font-size: 24px;
+.emphasis {
+  text-decoration-line: underline;
 }
-.text_note {
-  font-family: "Comic Sans MS";
-  font-style: italic;
-  font-size: 24px;
+.crossed {
+  text-decoration-line: line-through;
 }
-.separator {
-  background-color: green;
-  width: 50%;
-  height: 5px;
+.color-text {
+  background-color: yellow;
 }

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <div>
+    <h2>Введіть свої дані:</h2>
+    <form action="lab5_3.html" method="get" enctype="multipart/form-data">
+      <fieldset>
+        <legend>Дані користувача:</legend>
+        <div>
+          <label for="login">Логін:</label>
+          <input
+            type="text"
+            id="login"
+            name="login"
+            placeholder="Введіть ім'я"
+            tabindex="1"
+            required
+          />
+        </div>
+        <div>
+          <label for="password">Пароль:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6}"
+            autocomplete="off"
+            placeholder="Введіть пароль"
+            tabindex="2"
+            required
+          />
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            autocomplete="off"
+            placeholder="Введіть email"
+            tabindex="3"
+            required
+          />
+        </div>
+        <div>
+          <label for="phone">Номер телефону:</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            pattern="^\+380\d{9}$"
+            placeholder="+380XXXXXXXXX"
+            tabindex="4"
+            required
+          />
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Інформація про користувача:</legend>
+        <div>
+          <label for="birthday">Дата народження:</label>
+          <input type="date" id="birthday" name="birthday" tabindex="5" required />
+        </div>
+        <div>
+          <label>Стать:</label>
+          <label>
+            <input type="radio" name="gender" value="male" tabindex="6" />
+            Чоловіча
+          </label>
+          <label>
+            <input type="radio" name="gender" value="female" tabindex="7" />
+            Жіноча
+          </label>
+          <label>
+            <input type="radio" name="gender" value="other" tabindex="8" />
+            Інша
+          </label>
+        </div>
+        <div>
+          <label>Освіта:</label>
+          <label>
+            <input type="radio" name="education" value="school" tabindex="9" checked />
+            Школа
+          </label>
+          <label>
+            <input type="radio" name="education" value="college" tabindex="10" />
+            Коледж
+          </label>
+          <label>
+            <input type="radio" name="education" value="university" tabindex="11" />
+            Університет
+          </label>
+        </div>
+        <div>
+          <label for="city">Оберіть ваше місто:</label>
+          <select name="city" id="city" tabindex="12">
+            <option value="kyiv" selected>Київ</option>
+            <option value="lviv">Львів</option>
+            <option value="odesa">Одеса</option>
+            <option value="kharkiv">Харків</option>
+            <option value="dnipro">Дніпро</option>
+          </select>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Додаткова інформація про користувача:</legend>
+        <div>
+          <label>Інтереси:</label>
+          <label>
+            <input type="checkbox" name="interests" value="sport" tabindex="13" />
+            Спорт
+          </label>
+          <br />
+          <label>
+            <input type="checkbox" name="interests" value="music" tabindex="14" />
+            Музика
+          </label>
+          <br />
+          <label>
+            <input type="checkbox" name="interests" value="travel" tabindex="15" />
+            Подорожі
+          </label>
+          <br />
+          <label>
+            <input type="checkbox" name="interests" value="reading" tabindex="16" />
+            Читання
+          </label>
+        </div>
+        <div>
+          <label for="music" tabindex="17">Улюблений жанр:</label>
+          <select name="music" id="music">
+            <optgroup label="Рок">
+              <option value="The Rolling Stones">The Rolling Stones</option>
+              <option value="Queen">Queen</option>
+              <option value="AC/DC">AC/DC</option>
+            </optgroup>
+            <optgroup label="Поп">
+              <option value="ABBA">ABBA</option>
+              <option value="The Supremes">The Supremes</option>
+              <option value="The Ballad">The Ballad</option>
+            </optgroup>
+            <optgroup label="Електро">
+              <option value="Depeche Mode">Depeche Mode</option>
+              <option value="The Prodigy">The Prodigy</option>
+              <option value="Pendulum">Pendulum</option>
+            </optgroup>
+            <optgroup label="Метал">
+              <option value="Metallica">Metallica</option>
+              <option value="System of a Down">System of a Down</option>
+              <option value="Black Sabbath">Black Sabbath</option>
+            </optgroup>
+          </select>
+        </div>
+        <div>
+          <label>Улюблений браузер:</label>
+          <input
+            list="browsers"
+            id="browser"
+            name="browser"
+            placeholder="Наприклад, Chrome"
+            tabindex="18"
+          />
+          <datalist id="browsers">
+            <option value="Chrome"></option>
+            <option value="Firefox"></option>
+            <option value="Internet Explorer"></option>
+          </datalist>
+        </div>
+        <div>
+          <label for="audiofiles">Завантажте свої улюблені пісні:</label>
+          <input
+            type="file"
+            id="audiofiles"
+            name="audiofiles"
+            accept="audio/*"
+            tabindex="19"
+            multiple
+          />
+        </div>
+        <div>
+          <label>Про себе:</label>
+          <textarea
+            name="about"
+            rows="4"
+            cols="40"
+            placeholder="Коротко про себе"
+            tabindex="20"
+          ></textarea>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Надішліть або очистіть форму:</legend>
+        <input type="submit" value="Надіслати" tabindex="21" />
+        <input type="reset" value="Очистити" tabindex="22" />
+      </fieldset>
+    </form>
+  </div>
+</main>
+</body>
+</html>

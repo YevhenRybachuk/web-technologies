@@ -1,4 +1,4 @@
-div {
+.plan {
   background-color: rgb(255, 165, 0);
   width: 500px;
   padding: 20px;
@@ -35,13 +35,13 @@ span {
   padding: 10px 20px 10px 20px;
   display: inline-block;
 }
-.first_span {
+.menu {
   font-size: 20px;
   font-weight: 700;
   background-color: rgb(199, 124, 106);
   margin-bottom: 10px;
 }
-.second_span {
+.choise {
   background-color: rgb(218, 106, 32);
 }
 .li-imaged {

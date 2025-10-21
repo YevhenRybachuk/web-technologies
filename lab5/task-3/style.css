@@ -1,0 +1,65 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+}
+
+form {
+  width: 500px;
+  margin: 30px auto;
+  border: 2px solid black;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+fieldset {
+  border: 1px solid black;
+  margin-bottom: 15px;
+  padding: 10px 15px;
+}
+
+legend {
+  font-weight: bold;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  border: 1px solid black;
+  background: #f4f4f4;
+  padding: 6px 12px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  background: #ddd;
+}
