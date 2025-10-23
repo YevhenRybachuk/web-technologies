@@ -1,0 +1,66 @@
+.wrapper {
+  width: 1140px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+.icon {
+  width: 100px;
+  float: left;
+}
+.btn {
+  background-color: rgb(255, 127, 80);
+  font-size: 20px;
+  color: rgb(7, 7, 159);
+  width: 160px;
+  height: 48px;
+  margin-right: 10px;
+  margin-top: 40px;
+}
+.buttons {
+  float: right;
+}
+
+.container {
+  clear: both;
+  padding: 10px;
+}
+
+.first-column {
+  float: left;
+  width: 27%;
+  padding-right: 40px;
+  border-right: dotted rgb(197, 2, 2) 6px;
+  height: 700px;
+  text-align: justify;
+}
+
+.third-column {
+  float: right;
+  width: 27%;
+  height: 700px;
+  text-align: justify;
+}
+
+.second-column {
+  float: left;
+  width: 27%;
+  margin: 0 5%;
+  padding-right: 40px;
+  border-right: dotted rgb(197, 2, 2) 6px;
+  height: 700px;
+  text-align: justify;
+}
+.photo-right {
+  float: right;
+  margin: 10px;
+  width: 200px;
+  height: auto;
+}
+
+.photo-left {
+  float: left;
+  margin: 10px;
+  width: 200px;
+  height: auto;
+}

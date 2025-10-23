@@ -1,0 +1,96 @@
+.wrapper {
+  width: 1140px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+
+}
+
+.icon{
+  width: 100px;
+  float: left;
+}
+.btn {
+  background-color: rgb(255, 127, 80);
+  font-size: 20px;
+  color: rgb(7, 7, 159);
+  width: 160px;
+  height: 48px;
+  margin-right: 10px;
+  margin-top: 40px;
+}
+.buttons {
+  float: right;
+}
+
+.main{
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  color: aliceblue;
+}
+
+.container{
+  width: 1140px;
+  margin: 0 auto;
+  clear: both;
+}
+
+.block13 h3{
+  padding: 10px 0px;
+}
+
+.block13{
+  box-sizing: border-box;
+  width: 90%;
+  border-radius: 40px;
+  height: 190px;
+  background-color: rgb(94, 18, 18);
+  text-align: center;
+  margin: 10px auto;
+  padding: 0px 30px;
+}
+
+.block13 p{
+  text-align: justify;
+}
+
+.block14{
+  width:90%;
+  background-color: rgb(151, 89, 89);
+  border-radius: 40px;
+  margin: 0 auto;
+
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.block14 h3{
+  margin-bottom: 10px;
+}
+
+.block14 p{
+  text-align: justify;
+}
+
+.div-blocks{
+  height: 60%;
+  width: 100%;
+  margin: 10px 0px;
+}
+
+.nested-block{
+  display: inline-block;
+  border-radius: 40px;
+  background-color: rgb(172, 49, 49);
+  height: 100%;
+  width: 40%;
+  margin:10px;
+  padding: 10px 40px 20px 40px;
+  box-sizing: border-box;
+
+}
+
+.block15{
+  margin-right: 50px;
+}
