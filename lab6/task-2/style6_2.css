@@ -8,36 +8,15 @@ main{
   clear: both;
 }
 
-.icon {
+.logo {
   width: 100px;
   float: left;
 }
-.btn {
-  background-color: rgb(255, 127, 80);
-  font-size: 20px;
-  color: rgb(7, 7, 159);
-  width: 160px;
-  height: 48px;
-  margin-right: 10px;
-  margin-top: 40px;
-}
-.buttons {
-  float: right;
-}
-
-header {
-  text-align: start;
-}
-
-.logo-hyperlink {
-  width: 50px;
-}
-
 .horizontal-menu {
+  float: right;
   list-style-type: none;
   margin: 0;
 }
-
 li {
   margin: 10px;
   float: left;

@@ -5,28 +5,43 @@
   text-align: center;
 }
 
-.icon {
+.logo {
   width: 100px;
   float: left;
 }
-.btn {
-  background-color: rgb(255, 127, 80);
-  font-size: 20px;
-  color: rgb(7, 7, 159);
-  width: 160px;
-  height: 48px;
-  margin-right: 10px;
-  margin-top: 40px;
-}
-.buttons {
+.horizontal-menu {
   float: right;
+  list-style-type: none;
+  margin: 0;
+}
+li {
+  margin: 10px;
+  float: left;
 }
 
-main {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px;
+li a {
+  color: #583079;
+  font-weight: bold;
+  padding: 10px;
+  background: #ff7f50;
+  text-decoration: none;
+}
+
+.main {
+  width: 100%;
+  padding: 40px;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-align: center;
+}
+
+.cards {
+  width: 300px;
+  height: 400px;
+  border: 1px solid green;
+  box-sizing: border-box;
+  margin: 20px;
+  float: left;
 }
 
 header::after {
