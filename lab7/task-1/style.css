@@ -1,0 +1,35 @@
+.block1{
+  text-align: center;
+  width: 600px;
+  height: 100px;
+  background-color: #1eb31e;
+  position: absolute;
+  left: 40%;
+  border-color: black;
+  border-style: solid;
+  padding: 15px;
+}
+.block2{
+  text-align: center;
+  width: 400px;
+  height: 120px;
+  background-color: #75dd33;
+  position: absolute;
+  left: 45%;
+  top: 17%;
+  border-color: black;
+  border-style: solid;
+  padding: 15px;
+}
+.block3{
+  text-align: center;
+  width: 200px;
+  height: 150px;
+  background-color: #6696ff;
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  border-color: black;
+  border-style: solid;
+  padding: 15px;
+}
