@@ -1,10 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
-
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>task-3</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form>
+      <div class="line">
+        <h2 class="begin">Заповніть форму</h2>
+        <h2 class="hover">Ми вдячні вам</h2>
+      </div>
+      <div class="left">
+        <label for="login">Login</label>
+        <input class="input-user-info" type="text" id="login" required />
+      </div>
+      <div class="right">
+        <label for="email">Email</label>
+        <input class="input-user-info" type="email" id="email" required />
+      </div>
+      <div class="left">
+        <label for="password">Password</label>
+        <input class="input-password" type="password" id="password" required />
+      </div>
+      <div class="right">
+        <label for="re-password">Repeat password</label>
+        <input
+          class="input-password"
+          type="password"
+          id="re-password"
+          required
+        />
+      </div>
+      <div class="left">
+        <label for="first-name">First-name</label>
+        <input class="input-user-info" type="text" id="first-name" required />
+      </div>
+      <div class="right">
+        <label for="last-name">Last-name</label>
+        <input class="input-user-info" type="text" id="last-name" required />
+      </div>
+      <div>
+        <label for="about-me">About me</label>
+        <textarea class="input-about-me" id="about-me" rows="2"></textarea>
+      </div>
+      <button type="submit" class="button-submit">ok</button>
+      <button type="reset" class="button-reset">reset</button>
+    </form>
+  </body>
 </html>

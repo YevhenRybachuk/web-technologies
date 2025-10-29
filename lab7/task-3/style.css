@@ -1,0 +1,198 @@
+* {
+  box-sizing: border-box;
+}
+
+input,
+textarea {
+  color: black;
+  font-size: 16px;
+  font-weight: 700;
+  text-indent: 20px;
+  border-radius: 10px;
+  opacity: 0.6;
+}
+
+textarea {
+  width: 530px;
+  height: 46px;
+  resize: none;
+  padding: 5px;
+}
+
+input {
+  width: 250px;
+  height: 34px;
+  display: inline-block;
+  margin: 15px 0;
+}
+
+form::after {
+  display: block;
+  content: "";
+  clear: both;
+  width: 620px;
+}
+
+button {
+  font-size: 18px;
+  width: 130px;
+  height: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+  float: right;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.button-submit {
+  border: 3px solid #0097a7;
+  color: #0097a7;
+  background-color: #e3e3e3;
+}
+
+.button-reset {
+  border: 3px solid #e64a19;
+  color: #e64a19;
+  background-color: #e3e3e3;
+}
+
+h2 {
+  text-align: center;
+  font-size: 25px;
+  color: #7d21b3;
+  font-weight: 700;
+  font-style: italic;
+  margin: 20px 20px 5px 20px;
+  position: relative;
+}
+
+h2::first-letter {
+  font-size: 50px;
+  color: magenta;
+}
+
+form {
+  font-family: Helvetica, sans-serif;
+  width: 620px;
+  border: 20px solid #868686;
+  background-image: url("../img/red-smoke.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0px 20px 20px 20px;
+}
+
+label {
+  font-size: 18px;
+  display: block;
+  color: white;
+}
+
+.left,
+.right {
+  width: 48%;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.about {
+  float: left;
+  width: 100%;
+}
+
+textarea::first-line {
+  color: red;
+}
+
+.begin::before,
+.begin::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 120px;
+  position: absolute;
+  top: 70%;
+  background: red;
+}
+
+.begin::before {
+  left: 0;
+}
+.begin::after {
+  right: 0;
+}
+
+.line {
+  position: relative;
+}
+
+.line::after {
+  content: "";
+  margin: 0 auto;
+  height: 2px;
+  width: 300px;
+  background: red;
+  display: block;
+}
+
+.line:hover::after {
+  background: green;
+  width: 450px;
+}
+
+.line:hover .begin {
+  display: none;
+}
+
+.line:hover .hover {
+  display: block;
+}
+
+.hover {
+  display: none;
+}
+
+.input-user-info:hover {
+  background-color: #fbff00;
+}
+
+.input-user-info:focus {
+  background-color: #ffa600;
+}
+
+.input-password:hover {
+  background-color: #1eff00;
+}
+
+.input-password:focus {
+  background-color: #00ffea;
+}
+
+.input-about-me:hover {
+  box-shadow: 0 0 10px 5px rgba(233, 27, 154, 0.6);
+}
+
+.button-submit:hover {
+  color: white;
+  background-color: #0096a75b;
+}
+
+.button-submit:active {
+  background-color: #014950;
+  border-color: #ecfd00;
+}
+
+.button-reset:hover {
+  color: white;
+  background-color: #e6491989;
+}
+
+.button-reset:active {
+  background-color: #a02904;
+  border-color: #ecfd00;
+}

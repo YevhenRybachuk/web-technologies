@@ -1,0 +1,58 @@
+.block1-1 {
+  text-align: center;
+  font-weight: bold;
+  width: 460px;
+  height: 60px;
+  background-color: #1eb31e;
+  position: absolute;
+  left: 8%;
+  top: 57%;
+  border-color: black;
+  border-style: solid;
+  padding: 15px;
+}
+.block1-1:hover + .block2-1{
+  display: block;
+}
+.block1-2 {
+  text-align: center;
+  font-weight: bold;
+  width: 460px;
+  height: 60px;
+  background-color: #1eb31e;
+  position: absolute;
+  right: 35%;
+  top: 56%;
+  border-color: black;
+  border-style: solid;
+  padding: 15px;
+}
+.block1-2:hover + .block2-2 {
+  display: block;
+}
+.block2-1 {
+  display: none;
+  color: white;
+  text-align: center;
+  width: 1000px;
+  height: 600px;
+  background-color: #6696ff;
+  position: absolute;
+  right: 8%;
+  border-color: black;
+  border-style: solid;
+  padding: 15px;
+}
+.block2-2 {
+  display: none;
+  text-align: center;
+  color: white;
+  width: 460px;
+  height: 460px;
+  background-color: #6696ff;
+  position: absolute;
+  left: 8%;
+  border-color: black;
+  border-style: solid;
+  padding: 15px;
+}
