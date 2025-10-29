@@ -1,0 +1,157 @@
+.horizontal-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgb(85, 85, 85);
+  z-index: 1;
+}
+
+.horizontal-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.horizontal-nav li {
+  position: relative;
+  height: auto;
+}
+
+.horizontal-nav li a {
+  display: block;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.horizontal-nav img {
+  width: 30px;
+  height: auto;
+}
+
+.horizontal-nav li:hover > a {
+  background: rgb(120, 120, 120);
+}
+
+.horizontal-nav li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgb(95, 95, 95);
+  list-style: none;
+  padding: 0;
+}
+
+.horizontal-nav li.last {
+  margin-left: auto;
+}
+
+.horizontal-nav li ul li ul {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background: rgb(108, 108, 108);
+  list-style: none;
+  padding: 0;
+}
+
+.horizontal-nav li ul li:hover ul {
+  display: block;
+}
+
+.horizontal-nav li:hover > ul {
+  display: block;
+}
+
+.horizontal-nav li ul li a {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.horizontal-nav li.active > a {
+  background: rgb(76, 175, 80);
+}
+
+.vertical-nav {
+  position: fixed;
+  top: 5%;
+  left: 0;
+  width: 260px;
+  height: 100vh;
+  background: #045d9c;
+  color: white;
+}
+
+.vertical-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.vertical-nav li {
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+.vertical-nav img {
+  width: 24px;
+  height: 24px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  gap: 20px;
+}
+
+.vertical-nav label,
+.vertical-nav a {
+  display: flex;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+}
+
+.vertical-nav .content:hover {
+  background: #2490d6;
+}
+
+.vertical-nav input {
+  display: none;
+}
+
+.vertical-nav ul ul {
+  max-height: 0;
+  overflow: hidden;
+  background: #1c02c3;
+}
+
+.vertical-nav input:checked + .content + ul,
+.vertical-nav input:checked + label + ul {
+  max-height: 500px;
+}
+
+.vertical-nav ul ul a,
+.vertical-nav ul ul label {
+  padding-left: 30px;
+  font-size: 15px;
+  background: #0272c3;
+}
+
+.vertical-nav ul ul ul {
+  background: #0a85de;
+}
+
+.vertical-nav ul ul ul a {
+  padding-left: 50px;
+  font-size: 14px;
+  background: #0a85de;
+}
+
