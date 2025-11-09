@@ -158,19 +158,23 @@ textarea::first-line {
 }
 
 .input-user-info:hover {
-  background-color: #fbff00;
+  border-bottom-color: #fbff00;
+  box-shadow: inset 0 -4px #fbff00;
 }
 
 .input-user-info:focus {
-  background-color: #ffa600;
+  border-bottom-color: #ffa600;
+  box-shadow: inset 0 -4px #ffa600;
 }
 
 .input-password:hover {
-  background-color: #1eff00;
+  border-bottom-color: #1eff00;
+  box-shadow: inset 0 -4px #1eff00;
 }
 
 .input-password:focus {
-  background-color: #00ffea;
+  border-bottom-color: #00ffea;
+  box-shadow: inset 0 -4px #00ffea;
 }
 
 .input-about-me:hover {

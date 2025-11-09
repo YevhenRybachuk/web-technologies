@@ -1,0 +1,95 @@
+.weather-widget {
+  position: relative;
+  margin-top: 6%;
+  left: 31%;
+  width: 510px;
+  height: 400px;
+  background-color: rgb(174, 174, 174);
+}
+
+.block-square {
+  z-index: 2;
+  position: absolute;
+  left: 12%;
+  top: 5%;
+  background-color: black;
+  box-shadow: 10px 10px 20px 5px rgb(52, 52, 52);
+  width: 300px;
+  height: 300px;
+}
+
+.block-week {
+  z-index: 1;
+  position: relative;
+  top: 69%;
+  left: 43%;
+  background-color: rgb(188, 188, 188);
+  box-shadow: 5px 5px 5px rgb(120, 119, 119);
+  width: 250px;
+  height: 100px;
+}
+
+.block-week ul {
+  list-style: none;
+  font-size: 14px;
+  color: rgb(130, 130, 130);
+  margin: 0;
+  padding: 0;
+}
+
+.block-week > ul {
+  position: absolute;
+  top: 55%;
+  left: 8%;
+}
+
+.block-week > ul > li {
+  float: left;
+  margin-right: 20px;
+  text-align: center;
+}
+
+.text-color{
+  color: black;
+}
+
+.date {
+  z-index: 3;
+  position: absolute;
+  left: 16%;
+  top: 55%;
+  color: rgb(174, 174, 174);
+  font-size: 75px;
+  font-weight: bold;
+}
+
+.image {
+  z-index: 3;
+  position: absolute;
+  left: 26%;
+  top: 13%;
+  width: 350px;
+  height: auto;
+}
+
+.button-group {
+  z-index: 3;
+  position: relative;
+  left: 2%;
+  display: flex;
+  width: 200px;
+}
+
+.button-arrow {
+  background-color: rgb(144, 144, 144);
+  background-image: url("../img/arrow.png");
+  background-size: cover;
+  opacity: 0.6;
+  border: 1px solid rgb(129, 129, 129);
+  width: 50px;
+  height: 50px;
+}
+
+.button-arrow-left {
+  transform: rotate(180deg);
+}
