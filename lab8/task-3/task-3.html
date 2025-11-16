@@ -2,10 +2,94 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Weather-app</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="container">
+<div class="weather-app">
+  <div class="weather-today">
+    <h2 class="weather-city">New York, NY</h2>
+      <p class="text-style">Tuesday, April 15th</p>
+      <p class="text-style">Overcast</p>
+  </div>
+  <div class="weather-group">
+    <div class="weather-info">
+      <img
+        src="/img/iconfinder_weather04.png"
+        alt=":("
+      />
+      <p>58</p>
+      <span class="text-style">°F</span>
+    </div>
+    <ul class="weather-details">
+      <li class="weather-detail">
+        <span class="text-style">Precipitation:</span>
+        <span>100%</span>
+      </li>
+      <li class="weather-detail">
+        <span class="text-style">Humidity:</span>
+        <span>97%</span>
+      </li>
+      <li class="weather-detail">
+        <span class="text-style">Wind:</span>
+        <span>4 mph SW</span>
+      </li>
+      <li class="weather-detail">
+        <span class="text-style">Pollen Count:</span>
+        <span>36</span>
+      </li>
+    </ul>
+  </div>
+  <ul class="weather-list">
+    <li class="day">
+      <p class="day-label">Today</p>
+      <img class="day-icon" src="/img/iconfinder_weather07.png" alt="Today's weather icon"/>
+      <p class="day-temp">68°<span class="day-temp-min">36°</span></p>
+      <p class="text-style">Pollen 36</p>
+    </li>
 
+    <li class="day">
+      <p class="day-label">Wednesday</p>
+      <img class="day-icon" src="/img/iconfinder_weather01.png" alt="Weather icon"/>
+      <p class="day-temp">50°<span class="day-temp-min">39°</span></p>
+      <p class="text-style">Pollen 36</p>
+    </li>
+
+    <li class="day">
+      <p class="day-label">Thursday</p>
+      <img class="day-icon" src="/img/iconfinder_weather01.png" alt="Weather icon"/>
+      <p class="day-temp">55°<span class="day-temp-min">39°</span></p>
+      <p class="text-style">Pollen 36</p>
+    </li>
+
+    <li class="day">
+      <p class="day-label">Friday</p>
+      <img class="day-icon" src="/img/iconfinder_weather02.png" alt="Weather icon"/>
+      <p class="day-temp">54°<span class="day-temp-min">43°</span></p>
+      <p class="text-style">Pollen 36</p>
+    </li>
+
+    <li class="day">
+      <p class="day-label">Saturday</p>
+      <img class="day-icon" src="/img/iconfinder_weather05.png" alt="Weather icon"/>
+      <p class="day-temp">64°<span class="day-temp-min">46°</span></p>
+      <p class="text-style">Pollen 36</p>
+    </li>
+
+    <li class="day">
+      <p class="day-label">Sunday</p>
+      <img class="day-icon" src="/img/iconfinder_weather05.png" alt="Weather icon"/>
+      <p class="day-temp">64°<span class="day-temp-min">50°</span></p>
+      <p class="text-style">Pollen 36</p>
+    </li>
+
+    <li class="day none-border">
+      <p class="day-label">Monday</p>
+      <img class="day-icon" src="/img/iconfinder_weather03.png" alt="Weather icon"/>
+      <p class="day-temp">61°<span class="day-temp-min">50°</span></p>
+      <p class="text-style">Pollen 36</p>
+    </li>
+  </ul>
+</div>
 </body>
 </html>
