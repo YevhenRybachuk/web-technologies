@@ -1,0 +1,69 @@
+body {
+  background-color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: sans-serif;
+}
+
+.status {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  height: 30px;
+}
+
+.traffic-light {
+  background: #333;
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.light {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #222;
+  transition: all 0.4s ease;
+}
+
+.light.red-on {
+  background: radial-gradient(circle, #ff4d4d, #990000);
+  box-shadow: 0 0 40px #ff4d4d;
+}
+.light.yellow-on {
+  background: radial-gradient(circle, #ffeb3b, #f57f17);
+  box-shadow: 0 0 40px #ffeb3b;
+}
+.light.green-on {
+  background: radial-gradient(circle, #4caf50, #1b5e20);
+  box-shadow: 0 0 40px #4caf50;
+}
+
+.controls {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.main-btn {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 8px;
+  background: #444;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.main-btn.secondary { background: #555; }
+.main-btn:hover { background: #666; }

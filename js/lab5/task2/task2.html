@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Симулятор Світлофора</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+<div id="status-display" class="status">Очікування...</div>
+
+<div class="traffic-light">
+  <div id="red" class="light"></div>
+  <div id="yellow" class="light"></div>
+  <div id="green" class="light"></div>
+</div>
+
+<div class="controls">
+  <button class="main-btn" onclick="startTrafficLight()">Запустити цикл</button>
+  <button class="main-btn secondary" onclick="manualNext()">Наступний колір</button>
+  <button class="main-btn secondary" onclick="setupTimings()">Налаштувати час</button>
+</div>
+
+<script src="app2.js"></script>
+</body>
+</html>

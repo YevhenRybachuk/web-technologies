@@ -29,7 +29,7 @@ function processEmployeeArray(employees) {
   console.log("Only developers:", developers);
   employees = employees.filter(emp => emp.age <= 30);
   console.log("Delete who > 30:", employees);
-  const newEmployee = { name: "Elena", age: 27, position: "QA engineeer" };
+  const newEmployee = { name: "Elena", age: 27, position: "QA engineer" };
   employees.push(newEmployee);
   console.log(employees);
 }
@@ -88,15 +88,14 @@ const libraryManagement = {
     return this.books.filter(book => book.author === author);
   },
 
-  toggleBookAvailability(title, isBorrowed) {
-    const book = this.books.find(b => b.title === title);
-    if (book) {
-      book.isAvailable = !isBorrowed;
-      console.log(`Book status "${title}" update. Available: ${book.isAvailable}`);
-    } else {
-      console.log("Book not found.");
-    }
-  },
+    toggleBookAvailability(title, isBorrowed) {
+      this.books = this.books.map(b => {
+        if (b.title === title) {
+          b.isAvailable = !isBorrowed;
+        }
+        return b;
+      });
+    },
 
   sortBooksByPages() {
     this.books.sort((a, b) => a.pages - b.pages);
