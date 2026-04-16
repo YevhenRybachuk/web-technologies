@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Список товарів</title>
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+
+  <body>
+    <div class="shop-container">
+      <header>
+        <h1>Товари</h1>
+        <div id="totalPrice">Загальна сума: 0 грн</div>
+      </header>
+
+      <main>
+        <div id="filters">
+          <button data-filter="all">Всі</button>
+          <button data-filter="electronics">Електроніка</button>
+          <button data-filter="clothes">Одяг</button>
+          <button data-filter="food">Їжа</button>
+          <button data-filter="other">Інше</button>
+        </div>
+
+        <div id="sorting">
+          <button data-sort="price">За ціною</button>
+          <button data-sort="created">Новіші</button>
+          <button data-sort="updated">Оновлені</button>
+          <button data-sort="reset">Скинути</button>
+        </div>
+
+        <ul id="productList"></ul>
+
+        <p id="emptyMessage">
+          Наразі список товарів пустий. Додайте новий товар.
+        </p>
+
+        <button id="addBtn" class="btn-sm">Додати товар</button>
+      </main>
+    </div>
+
+    <div id="modal" class="modal hidden">
+      <div class="modal-content">
+        <form id="productForm">
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Назва"
+            required
+            minlength="2"
+          />
+
+          <input
+            type="number"
+            name="price"
+            id="price"
+            placeholder="Ціна"
+            required
+            min="1"
+          />
+
+          <select name="category" id="category" required>
+            <option value="">Оберіть категорію</option>
+            <option value="electronics">Електроніка</option>
+            <option value="clothes">Одяг</option>
+            <option value="food">Їжа</option>
+            <option value="other">Інше</option>
+          </select>
+
+          <input
+            type="url"
+            name="image"
+            id="image"
+            placeholder="URL картинки"
+            required
+          />
+
+          <button type="submit" class="btn-sm btn-edit">Зберегти</button>
+
+          <button type="button" id="closeModal" class="btn-sm btn-del">
+            Закрити
+          </button>
+        </form>
+      </div>
+    </div>
+    <div id="toast"></div>
+    <script src="app1.js"></script>
+  </body>
+</html>

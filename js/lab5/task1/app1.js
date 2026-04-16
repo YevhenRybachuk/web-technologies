@@ -12,10 +12,10 @@ function toggleLamp() {
 function changeType(type, element) {
   currentType = type;
 
-  document.querySelectorAll('.type-btn').forEach(btn => {
-    btn.classList.remove('active');
+  document.querySelectorAll(".type-btn").forEach((btn) => {
+    btn.classList.remove("active");
   });
-  if (element) element.classList.add('active');
+  if (element) element.classList.add("active");
 
   if (isOn) {
     updateLampVisuals();

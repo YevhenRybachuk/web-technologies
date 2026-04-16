@@ -1,42 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-  <link rel="stylesheet" href="style4.css">
-</head>
-<body>
-<div class="shop-container card">
-  <h2>Управління магазином</h2>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Інтернет магазин</title>
+    <link rel="stylesheet" href="style4.css" />
+  </head>
+  <body>
+    <div class="shop-container card">
+      <h2>Управління магазином</h2>
 
-  <div class="shop-form">
-    <input type="text" id="prodName" placeholder="Назва продукту">
-    <input type="number" id="prodPrice" placeholder="Ціна">
-    <input type="number" id="prodStock" placeholder="Кількість">
-    <button class="main-btn" onclick="uiAddProduct()">Додати товар</button>
-  </div>
+      <div class="shop-form">
+        <input type="text" id="prodName" placeholder="Назва продукту" />
+        <input type="number" id="prodPrice" placeholder="Ціна" />
+        <input type="number" id="prodStock" placeholder="Кількість" />
+        <button class="main-btn" onclick="uiAddProduct()">Додати товар</button>
+      </div>
 
-  <div class="search-bar">
-    <input type="text" id="searchInp" placeholder="Пошук за назвою..." oninput="uiSearch()">
-  </div>
+      <div class="search-bar">
+        <input
+          type="text"
+          id="searchInp"
+          placeholder="Пошук за назвою..."
+          oninput="uiSearch()"
+        />
+      </div>
 
-  <table class="shop-table">
-    <thead>
-    <tr>
-      <th>Назва</th>
-      <th>Ціна</th>
-      <th>Склад</th>
-      <th>Дії</th>
-    </tr>
-    </thead>
-    <tbody id="catalogTable">
-    </tbody>
-  </table>
+      <table class="shop-table">
+        <thead>
+          <tr>
+            <th>Назва</th>
+            <th>Ціна</th>
+            <th>Склад</th>
+            <th>Дії</th>
+          </tr>
+        </thead>
+        <tbody id="catalogTable"></tbody>
+      </table>
 
-  <div id="shop-stats" class="status-bar">
-    Активних замовлень: <span id="ordersCount">0</span>
-  </div>
-</div>
-<script src="app4.js"></script>
-</body>
+      <div id="shop-stats" class="status-bar">
+        Активних замовлень: <span id="ordersCount">0</span>
+      </div>
+    </div>
+    <script src="app4.js"></script>
+  </body>
 </html>

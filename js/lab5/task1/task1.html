@@ -1,21 +1,23 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
-<head>
-  <meta charset="UTF-8">
-  <title>Лампочка</title>
-  <link rel="stylesheet" href="style1.css">
-</head>
-<body>
-<div id="lamp" class="lamp off"></div>
-<div class="controls">
-  <button class="main-btn" onclick="toggleLamp()">Вкл / Викл</button>
-  <div class="type-switcher">
-    <button class="type-btn active" onclick="changeType('normal', this)">Звичайна</button>
-    <button class="type-btn" onclick="changeType('eco', this)">Еко</button>
-    <button class="type-btn" onclick="changeType('led', this)">LED</button>
-  </div>
-  <button class="main-btn" onclick="changeBrightness()">Яскравість</button>
-</div>
-<script src="app1.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Лампочка</title>
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+  <body>
+    <div id="lamp" class="lamp off"></div>
+    <div class="controls">
+      <button class="main-btn" onclick="toggleLamp()">Вкл / Викл</button>
+      <div class="type-switcher">
+        <button class="type-btn active" onclick="changeType('normal', this)">
+          Звичайна
+        </button>
+        <button class="type-btn" onclick="changeType('eco', this)">Еко</button>
+        <button class="type-btn" onclick="changeType('led', this)">LED</button>
+      </div>
+      <button class="main-btn" onclick="changeBrightness()">Яскравість</button>
+    </div>
+    <script src="app1.js"></script>
+  </body>
 </html>

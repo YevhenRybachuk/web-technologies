@@ -1,7 +1,7 @@
 body {
   background-color: #121212;
   color: white;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,7 +21,7 @@ body {
   background: #1e1e1e;
   padding: 25px;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   text-align: center;
 }
 
@@ -37,8 +37,13 @@ body {
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 input {
@@ -64,6 +69,17 @@ input {
   margin-top: 10px;
 }
 
-.day-name { font-weight: bold; color: #777; font-size: 12px; }
-.day { padding: 8px; font-size: 14px; }
-.today { background: #00ff88; color: black; border-radius: 50%; }
+.day-name {
+  font-weight: bold;
+  color: #777;
+  font-size: 12px;
+}
+.day {
+  padding: 8px;
+  font-size: 14px;
+}
+.today {
+  background: #00ff88;
+  color: black;
+  border-radius: 50%;
+}

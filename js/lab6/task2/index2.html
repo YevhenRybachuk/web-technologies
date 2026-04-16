@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Список завдань</title>
+
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <p class="header-tag">Менеджер завдань</p>
+      </header>
+      <div class="stats" id="stats" role="status" aria-live="polite"></div>
+      <section aria-label="Додати завдання">
+        <div class="add-form" role="form">
+          <div class="field">
+            <label for="new-task">Нове завдання</label>
+            <input
+              type="text"
+              id="new-task"
+              placeholder="Введіть текст завдання…"
+              minlength="2"
+              maxlength="200"
+              required
+              autocomplete="off"
+              aria-label="Текст нового завдання"
+            />
+          </div>
+          <button
+            class="btn-add"
+            id="btn-add"
+            type="button"
+            aria-label="Додати завдання"
+          >
+            + Додати
+          </button>
+        </div>
+      </section>
+
+      <div class="toolbar" role="toolbar" aria-label="Керування списком">
+        <label for="sort-select">Сортування:</label>
+        <select id="sort-select" aria-label="Критерій сортування">
+          <option value="date-asc">За датою ↑</option>
+          <option value="date-desc">За датою ↓</option>
+          <option value="status">За статусом</option>
+          <option value="updated">За оновленням</option>
+        </select>
+        <div class="filter-group" role="group" aria-label="Фільтр завдань">
+          <button class="btn-filter active" data-filter="all" type="button">
+            Усі
+          </button>
+          <button class="btn-filter" data-filter="active" type="button">
+            Активні
+          </button>
+          <button class="btn-filter" data-filter="completed" type="button">
+            Виконані
+          </button>
+        </div>
+      </div>
+
+      <main>
+        <ul id="task-list" aria-label="Список завдань"></ul>
+        <div id="empty-state" class="empty" hidden>
+          <div class="empty-icon"></div>
+          <h3>Список порожній</h3>
+          <p>Додайте перше завдання вище</p>
+        </div>
+      </main>
+    </div>
+    <script src="app2.js"></script>
+  </body>
+</html>

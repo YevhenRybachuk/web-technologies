@@ -4,7 +4,6 @@ const priceHistory = new WeakMap();
 const promotionalItems = new WeakSet();
 const originalPrices = new WeakMap();
 
-
 let productIdCounter = 101;
 
 function addProduct(id, name, price, stock) {
@@ -38,8 +37,8 @@ function updateProduct(id, newPrice, newStock) {
 }
 
 function findProductByName(name) {
-  return Array.from(catalog.values()).filter(p =>
-    p.name.toLowerCase().includes(name.toLowerCase())
+  return Array.from(catalog.values()).filter((p) =>
+    p.name.toLowerCase().includes(name.toLowerCase()),
   );
 }
 
@@ -77,19 +76,18 @@ function markAsPromo(id) {
   }
 }
 
-
 function uiRender(items = Array.from(catalog.values())) {
-  const table = document.getElementById('catalogTable');
+  const table = document.getElementById("catalogTable");
   if (!table) return;
-  table.innerHTML = '';
+  table.innerHTML = "";
 
-  items.forEach(product => {
+  items.forEach((product) => {
     const isPromo = promotionalItems.has(product);
-    const row = document.createElement('tr');
-    if (isPromo) row.classList.add('promo-row');
+    const row = document.createElement("tr");
+    if (isPromo) row.classList.add("promo-row");
 
     row.innerHTML = `
-      <td>${product.name} ${isPromo ? '🔥' : ''}</td>
+      <td>${product.name} ${isPromo ? "🔥" : ""}</td>
       <td>${product.price} грн</td>
       <td>${product.stock} шт</td>
       <td>
@@ -103,20 +101,20 @@ function uiRender(items = Array.from(catalog.values())) {
     table.appendChild(row);
   });
 
-  document.getElementById('ordersCount').innerText = activeOrders.size;
+  document.getElementById("ordersCount").innerText = activeOrders.size;
 }
 
 function uiAddProduct() {
-  const name = document.getElementById('prodName').value;
-  const price = Number(document.getElementById('prodPrice').value);
-  const stock = Number(document.getElementById('prodStock').value);
+  const name = document.getElementById("prodName").value;
+  const price = Number(document.getElementById("prodPrice").value);
+  const stock = Number(document.getElementById("prodStock").value);
 
   if (name && price > 0) {
     addProduct(productIdCounter++, name, price, stock);
     uiRender();
-    document.getElementById('prodName').value = '';
-    document.getElementById('prodPrice').value = '';
-    document.getElementById('prodStock').value = '';
+    document.getElementById("prodName").value = "";
+    document.getElementById("prodPrice").value = "";
+    document.getElementById("prodStock").value = "";
   }
 }
 
@@ -137,7 +135,9 @@ function uiShowHistory(id) {
   if (!history || history.length === 0) {
     alert("Ціна ще не змінювалася.");
   } else {
-    alert(`Історія цін для ${product.name}:\n${history.join(' грн → ')} грн → зараз ${product.price} грн`);
+    alert(
+      `Історія цін для ${product.name}:\n${history.join(" грн → ")} грн → зараз ${product.price} грн`,
+    );
   }
 }
 
@@ -157,7 +157,7 @@ function uiPromo(id) {
 }
 
 function uiSearch() {
-  const query = document.getElementById('searchInp').value;
+  const query = document.getElementById("searchInp").value;
   const filtered = findProductByName(query);
   uiRender(filtered);
 }

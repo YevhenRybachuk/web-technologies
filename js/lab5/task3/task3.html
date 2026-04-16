@@ -1,38 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Time Dashboard</title>
-  <link rel="stylesheet" href="style3.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time Dashboard</title>
+    <link rel="stylesheet" href="style3.css" />
+  </head>
+  <body>
+    <div class="dashboard">
+      <div class="card clock-card">
+        <div id="clock">00:00<span>:</span>00</div>
+        <p>Поточний час</p>
+      </div>
 
-<div class="dashboard">
-  <div class="card clock-card">
-    <div id="clock">00:00<span>:</span>00</div>
-    <p>Поточний час</p>
-  </div>
+      <div class="card timer-card">
+        <h3>Таймер події</h3>
+        <input
+          type="datetime-local"
+          id="targetDate"
+          onchange="startCountdown()"
+        />
+        <div id="countdown-display">Оберіть дату...</div>
+      </div>
 
-  <div class="card timer-card">
-    <h3>Таймер події</h3>
-    <input type="datetime-local" id="targetDate" onchange="startCountdown()">
-    <div id="countdown-display">Оберіть дату...</div>
-  </div>
+      <div class="card calendar-card">
+        <h3>Мій День Народження</h3>
+        <input type="date" id="birthDateInput" onchange="calculateBirthday()" />
 
-  <div class="card calendar-card">
-    <h3>Мій День Народження</h3>
-    <input type="date" id="birthDateInput" onchange="calculateBirthday()">
+        <div id="birthday-result" class="countdown-text">Оберіть дату...</div>
 
-    <div id="birthday-result" class="countdown-text">Оберіть дату...</div>
+        <h3>Перегляд календаря</h3>
+        <input type="month" id="calendarPicker" onchange="updateCalendar()" />
+        <div id="calendar-grid" class="calendar-grid"></div>
+      </div>
+    </div>
 
-    <h3>Перегляд календаря</h3>
-    <input type="month" id="calendarPicker" onchange="updateCalendar()">
-    <div id="calendar-grid" class="calendar-grid"></div>
-  </div>
-
-</div>
-
-<script src="app3.js"></script>
-</body>
+    <script src="app3.js"></script>
+  </body>
 </html>
