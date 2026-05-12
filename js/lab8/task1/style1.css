@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #141e30, #243b55);
+  color: white;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+.hidden {
+  display: none !important;
+}
+
+.title {
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+/* =========================
+   SETTINGS
+========================= */
+
+.settings {
+  max-width: 1200px;
+  margin: 0 auto 30px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.settings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.setting-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.setting-group label {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.setting-group select,
+.setting-group input {
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  outline: none;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease;
+}
+
+.setting-group select:focus,
+.setting-group input:focus {
+  transform: scale(1.02);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+}
+
+.settings-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  will-change: transform;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+  opacity 0.2s ease,
+  box-shadow 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn-start   { background: #4caf50; color: white; }
+.btn-reset   { background: #ff9800; color: white; }
+.btn-restart { background: #f44336; color: white; }
+
+/* =========================
+   GAME INFO
+========================= */
+
+.game-info {
+  max-width: 1200px;
+  margin: 0 auto 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  border-radius: 18px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.info-card:hover { transform: translateY(-5px); }
+
+.info-card h3 { margin-bottom: 10px; font-size: 18px; }
+.info-card p  { font-size: 28px; font-weight: 600; }
+
+/* =========================
+   SCOREBOARD
+========================= */
+
+.scoreboard {
+  max-width: 1200px;
+  margin: 0 auto 30px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.scoreboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.player-score {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  border-radius: 16px;
+  text-align: center;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.player-score:hover { transform: translateY(-6px); }
+.player-score h3    { margin-bottom: 15px; font-size: 24px; }
+.player-score p     { margin-bottom: 10px; font-size: 18px; }
+
+/* =========================
+   GAME BOARD
+========================= */
+
+.game-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 120px);
+  gap: 18px;
+  justify-content: center;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card {
+  width: 120px;
+  height: 150px;
+  perspective: 1200px;
+  cursor: pointer;
+  will-change: transform;
+  /* Ховер/актив тільки для невідкритих/незбіглих карток */
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+  filter 0.25s ease;
+}
+
+/* Ховер тільки для карток що ще не перегорнуті */
+.card:not(.flipped):not(.matched):hover {
+  transform: translateY(-8px) scale(1.02);
+  filter: brightness(1.1);
+}
+
+.card:not(.flipped):not(.matched):active {
+  transform: scale(0.96);
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+.card-front {
+  background: linear-gradient(135deg, #ff512f, #dd2476);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.card-back {
+  background: linear-gradient(135deg, #ffffff, #f1f1f1);
+  color: black;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 82px;
+}
+
+/*
+  FIX анімації:
+  Анімація emojiAppear застосовується ТІЛЬКИ при першому появленні .flipped,
+  а не при кожному ре-рендері. Це стає можливим завдяки тому, що ми
+  НЕ перестворюємо DOM-елементи при кожному оновленні стану (patchBoard),
+  а лише додаємо/видаляємо класи. Таким чином анімація спрацьовує один раз
+  — коли клас .flipped додається вперше.
+
+  Для matched карток анімація НЕ застосовується повторно, бо .matched
+  додається один раз і DOM-елемент залишається той самий.
+*/
+
+/* Анімація появи емодзі — тільки при кліку (не matched ще) */
+.card.flipped:not(.matched) .card-back {
+  animation: emojiAppear 0.4s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+/* Matched картки — без повторної анімації, зі статичним виглядом */
+.card.matched {
+  cursor: default;
+  pointer-events: none;
+}
+
+.card.matched .card-inner .card-back {
+  border: 2px solid rgba(76, 175, 80, 0.6);
+}
+
+/* Пульс при знаходженні пари */
+.card.matched {
+  animation: matchedPulse 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* =========================
+   ROUND RESULTS
+========================= */
+
+.round-results {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+#results-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.result-card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  border-radius: 16px;
+  transition: transform 0.25s ease;
+}
+
+.result-card:hover { transform: translateX(6px); }
+.result-card h3    { margin-bottom: 10px; }
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  width: 90%;
+  max-width: 500px;
+  padding: 40px;
+  border-radius: 24px;
+  text-align: center;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  animation: modalPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal-content h2 { font-size: 36px; margin-bottom: 20px; }
+.modal-content p  { font-size: 24px; margin-bottom: 30px; }
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes emojiAppear {
+  0%   { transform: rotateY(180deg) scale(0.5); opacity: 0; }
+  100% { transform: rotateY(180deg) scale(1);   opacity: 1; }
+}
+
+@keyframes matchedPulse {
+  0%   { transform: scale(1);    }
+  50%  { transform: scale(1.05); }
+  100% { transform: scale(1);    }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes modalPop {
+  0%   { transform: scale(0.7) translateY(20px); opacity: 0; }
+  100% { transform: scale(1)   translateY(0);    opacity: 1; }
+}
