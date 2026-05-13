@@ -1,9 +1,5 @@
 "use strict";
 
-/* =========================
-   CONSTANTS
-========================= */
-
 const DIFFICULTY_TIME = {
   easy: 180,
   normal: 120,
@@ -41,10 +37,6 @@ const DEFAULT_SETTINGS = {
   playerNames: ["Player 1", "Player 2"],
 };
 
-/* =========================
-   PURE FUNCTIONS — utils
-========================= */
-
 const shuffleArray = (array) =>
   [...array].reduceRight(
     (acc, _, i) => {
@@ -63,10 +55,6 @@ const isPair = (a, b) => a.value === b.value;
 const nextPlayer = (current, count) => (current + 1) % count;
 
 const clamp = (val, min, max) => Math.min(Math.max(val, min), max);
-
-/* =========================
-   PURE FUNCTIONS — state creators
-========================= */
 
 const parseSize = (sizeStr) => {
   const [rows, cols] = sizeStr.split("x").map(Number);
@@ -120,10 +108,6 @@ const createInitialAppState = () => ({
   ),
   statistics: [],
 });
-
-/* =========================
-   PURE FUNCTIONS — state transformers
-========================= */
 
 const flipCard = (state, id) => ({
   ...state,
@@ -226,10 +210,6 @@ const startNewGame = (settings, currentRound = 1, statistics = []) => ({
   statistics,
 });
 
-/* =========================
-   PURE FUNCTIONS — winner
-========================= */
-
 const determineRoundWinner = (players, playersCount) => {
   if (playersCount === 1) return players[0].name;
   if (players[0].pairs > players[1].pairs) return players[0].name;
@@ -250,16 +230,8 @@ const determineFinalWinner = (statistics, playersCount, playerNames) => {
   return "Нічия";
 };
 
-/* =========================
-   APP STATE (single mutable reference)
-========================= */
-
 let appState = createInitialAppState();
 let timerInterval = null;
-
-/* =========================
-   SELECTORS
-========================= */
 
 const $ = (sel) => document.querySelector(sel);
 
@@ -290,19 +262,6 @@ const closeModalBtn = $("#close-modal-btn");
 const player2Section = $("#player2-section");
 const scoreP2Block = $("#score-player2-block");
 
-/* =========================
-   RENDER
-========================= */
-
-/*
-  FIX анімації карток:
-  Проблема була в тому, що при кожному renderBoard() DOM перебудовувався повністю,
-  через що браузер заново застосовував CSS-анімацію .card.flipped .card-back.
-  Рішення: оновлювати тільки класи існуючих DOM-елементів (patch),
-  а не видаляти і створювати їх заново.
-  Повне перестворення DOM відбувається лише при initBoard() — старті гри.
-*/
-
 const initBoard = (state) => {
   gameBoard.innerHTML = "";
   gameBoard.style.gridTemplateColumns = `repeat(${state.game.cols}, 120px)`;
@@ -332,7 +291,6 @@ const patchBoard = (state) => {
     const isFlipped = el.classList.contains("flipped");
     const isMatched = el.classList.contains("matched");
 
-    /* Додаємо .flipped тільки якщо ще не додано — щоб не перезапускати анімацію */
     if (shouldBeFlipped && !isFlipped) {
       el.classList.add("flipped");
     } else if (!shouldBeFlipped && isFlipped) {
@@ -388,10 +346,6 @@ const renderPlayer2Input = (playersCount) => {
   }
 };
 
-/* =========================
-   TIMER
-========================= */
-
 const stopTimer = () => {
   clearInterval(timerInterval);
   timerInterval = null;
@@ -410,10 +364,6 @@ const startTimer = () => {
     }
   }, 1000);
 };
-
-/* =========================
-   GAME FLOW
-========================= */
 
 const readSettings = () => ({
   boardSize: boardSizeSelect.value,
@@ -442,7 +392,7 @@ const showFinalModal = (state) => {
     state.settings.playersCount,
     state.settings.playerNames,
   );
-  winnerText.textContent = `🏆 Переможець: ${winner}`;
+  winnerText.textContent = `Переможець: ${winner}`;
   finalModal.classList.remove("hidden");
   renderResults(state);
 };
@@ -453,7 +403,6 @@ const finishRound = (state) => {
     state.settings.playersCount,
   );
 
-  // Додаємо статистику раунду
   const newStats = [
     ...state.statistics,
     {
@@ -468,7 +417,6 @@ const finishRound = (state) => {
   renderResults(updatedState);
 
   if (state.game.currentRound < state.settings.rounds) {
-    // Є ще раунди
     setTimeout(() => {
       appState = {
         ...updatedState,
@@ -506,7 +454,6 @@ const startGame = () => {
 
 const restartGame = () => {
   stopTimer();
-  // Перезапуск з тими ж налаштуваннями, але скидаємо статистику та раунди
   appState = startNewGame(appState.settings);
   initBoard(appState);
   renderInfo(appState);
@@ -514,10 +461,6 @@ const restartGame = () => {
   renderResults(appState);
   startTimer();
 };
-
-/* =========================
-   CARD CLICK HANDLER
-========================= */
 
 const handleCardClick = (id) => {
   const { game, settings, players } = appState;
@@ -528,13 +471,11 @@ const handleCardClick = (id) => {
   const card = game.cards.find((c) => c.id === id);
   if (!card || card.flipped || card.matched) return;
 
-  // Перегортаємо картку
   appState = flipCard(appState, id);
   patchBoard(appState);
 
   if (appState.game.flippedCards.length < 2) return;
 
-  // Два відкриті — реєструємо хід
   appState = registerMove(appState);
 
   const [first, second] = appState.game.flippedCards;
@@ -562,10 +503,6 @@ const handleCardClick = (id) => {
   }
 };
 
-/* =========================
-   EVENTS
-========================= */
-
 startGameBtn.addEventListener("click", startGame);
 
 restartGameBtn.addEventListener("click", restartGame);
@@ -581,10 +518,6 @@ closeModalBtn.addEventListener("click", () => {
 playersCountSel.addEventListener("change", () => {
   renderPlayer2Input(Number(playersCountSel.value));
 });
-
-/* =========================
-   INIT
-========================= */
 
 const init = () => {
   applySettings(DEFAULT_SETTINGS);

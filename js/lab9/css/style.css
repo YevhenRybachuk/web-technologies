@@ -1,0 +1,166 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #dfe9f3, #ffffff);
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  margin: 60px auto;
+  background: white;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.hint {
+  font-size: 11px;
+  color: #888;
+  margin-top: -8px;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tab {
+  flex: 1;
+  padding: 12px;
+  cursor: pointer;
+  background: #ecf0f1;
+  border: none;
+  transition: background 0.3s;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.tab:hover {
+  background: #d0d7de;
+}
+
+.tab.active {
+  background: #3498db;
+  color: white;
+}
+
+.form {
+  display: none;
+}
+
+.form.active {
+  display: block;
+}
+
+h2 {
+  text-align: center;
+  margin: 0 0 20px;
+}
+
+label {
+  display: block;
+  margin: 12px 0 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: 0.2s;
+  font-size: 14px;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52,152,219,0.4);
+}
+
+input.valid {
+  border: 2px solid #2ecc71;
+}
+
+input.invalid {
+  border: 2px solid #e74c3c;
+}
+
+.password-box {
+  position: relative;
+}
+
+.password-box input {
+  padding-right: 40px;
+}
+
+.toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.2s;
+  font-size: 18px;
+  user-select: none;
+}
+
+.toggle:hover {
+  opacity: 1;
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 12px;
+  min-height: 16px;
+  margin-top: 2px;
+}
+
+button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  background: #3498db;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+button:hover {
+  background: #2980b9;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+label input[type="checkbox"] {
+  width: auto;
+  margin-right: 6px;
+}
+
+.form label:has(input[type="checkbox"]) {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+select:disabled {
+  background: #f2f2f2;
+  cursor: not-allowed;
+}

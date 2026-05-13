@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="kanban-container">
+      <div class="board-header">
+        <h1>Kanban Board</h1>
+      </div>
+      <div class="kanban-board" id="kanbanBoard">
+        <div class="column" data-column="todo" id="col-todo">
+          <div class="column-header">
+            <div class="column-title">
+              <span>Заплановано</span>
+            </div>
+            <div class="badge-count" id="todo-count">0</div>
+          </div>
+          <div class="task-list" id="todo-list" data-status="todo"></div>
+        </div>
+        <div class="column" data-column="progress" id="col-progress">
+          <div class="column-header">
+            <div class="column-title">
+              <span>В роботі</span>
+            </div>
+            <div class="badge-count" id="progress-count">0</div>
+          </div>
+          <div
+            class="task-list"
+            id="progress-list"
+            data-status="progress"
+          ></div>
+        </div>
+        <div class="column" data-column="done" id="col-done">
+          <div class="column-header">
+            <div class="column-title">
+              <span>Готово</span>
+            </div>
+            <div class="badge-count" id="done-count">0</div>
+          </div>
+          <div class="task-list" id="done-list" data-status="done"></div>
+        </div>
+      </div>
+    </div>
+    <script defer src="app.js"></script>
+  </body>
+</html>

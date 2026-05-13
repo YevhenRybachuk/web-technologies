@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Auth Forms</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="tabs">
+        <button class="tab active" data-tab="login">Login</button>
+        <button class="tab" data-tab="register">Register</button>
+      </div>
+
+      <form id="login" class="form active" novalidate>
+        <h2>Login</h2>
+
+        <label for="loginUsername">Username</label>
+        <input type="text" id="loginUsername" placeholder="Your username" />
+        <small class="error"></small>
+
+        <label for="loginPassword">Password</label>
+        <div class="password-box">
+          <input type="password" id="loginPassword" placeholder="Password" />
+          <span class="toggle" aria-label="Show password">🔒</span>
+        </div>
+        <small class="error"></small>
+
+        <label> <input type="checkbox" /> Remember me </label>
+
+        <button type="submit">Login</button>
+      </form>
+
+      <form id="register" class="form" novalidate>
+        <h2>Register</h2>
+
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" placeholder="First Name" />
+        <small class="error"></small>
+
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" placeholder="Last Name" />
+        <small class="error"></small>
+
+        <label for="regEmail">Email</label>
+        <input type="text" id="regEmail" placeholder="Email" />
+        <small class="error"></small>
+
+        <label for="regPassword">Password</label>
+        <div class="password-box">
+          <input type="password" id="regPassword" placeholder="Password" />
+          <span class="toggle" aria-label="Show password">🔒</span>
+        </div>
+        <small class="error"></small>
+
+        <label for="confirmPassword">Confirm Password</label>
+        <div class="password-box">
+          <input
+            type="password"
+            id="confirmPassword"
+            placeholder="Confirm Password"
+          />
+          <span class="toggle" aria-label="Show password">🔒</span>
+        </div>
+        <small class="error"></small>
+
+        <label for="phone">Phone</label>
+        <input type="text" id="phone" placeholder="+380XXXXXXXXX" />
+        <small class="error"></small>
+
+        <label for="birth">Date of birth</label>
+        <input type="date" id="birth" />
+        <small class="error"></small>
+
+        <label for="gender">Gender</label>
+        <select id="gender">
+          <option value="">Choose gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <small class="error"></small>
+
+        <label for="country">Country</label>
+        <select id="country">
+          <option value="">Select country</option>
+          <option value="ua">Ukraine</option>
+          <option value="pl">Poland</option>
+          <option value="de">Germany</option>
+          <option value="fr">France</option>
+          <option value="us">USA</option>
+          <option value="gb">United Kingdom</option>
+        </select>
+
+        <label for="city">City</label>
+        <select id="city" disabled>
+          <option value="">City</option>
+        </select>
+        <small class="error"></small>
+
+        <button type="submit">Register</button>
+      </form>
+    </div>
+
+    <script src="./js/app.js"></script>
+  </body>
+</html>

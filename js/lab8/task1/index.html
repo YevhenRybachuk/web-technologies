@@ -1,139 +1,121 @@
 <!doctype html>
 <html lang="uk">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Memory Pair Game</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-
-<!-- HEADER -->
-<header class="header">
-  <h1 class="title">Memory Pair Game</h1>
-</header>
-
-<!-- SETTINGS -->
-<section class="settings">
-  <h2 class="section-title">Налаштування гри</h2>
-
-  <div class="settings-grid">
-
-    <div class="setting-group">
-      <label for="board-size">Розмір поля</label>
-      <select id="board-size">
-        <option value="4x4">4 x 4</option>
-        <option value="4x6">4 x 6</option>
-        <option value="6x6">6 x 6</option>
-      </select>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Pair Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="title">Memory Pair Game</h1>
+    </header>
+    <section class="settings">
+      <h2 class="section-title">Налаштування гри</h2>
+      <div class="settings-grid">
+        <div class="setting-group">
+          <label for="board-size">Розмір поля</label>
+          <select id="board-size">
+            <option value="4x4">4 x 4</option>
+            <option value="4x6">4 x 6</option>
+            <option value="6x6">6 x 6</option>
+          </select>
+        </div>
+        <div class="setting-group">
+          <label for="difficulty">Складність</label>
+          <select id="difficulty">
+            <option value="easy" selected>Easy (3 хв)</option>
+            <option value="normal">Normal (2 хв)</option>
+            <option value="hard">Hard (1 хв)</option>
+          </select>
+        </div>
+        <div class="setting-group">
+          <label for="players-count">Кількість гравців</label>
+          <select id="players-count">
+            <option value="1" selected>1 Player</option>
+            <option value="2">2 Players</option>
+          </select>
+        </div>
+        <div class="setting-group">
+          <label for="rounds">Кількість раундів</label>
+          <input type="number" id="rounds" min="1" value="1" />
+        </div>
+        <div class="setting-group">
+          <label for="player1-name">Ім'я гравця 1</label>
+          <input
+            type="text"
+            id="player1-name"
+            placeholder="Player 1"
+            value="Player 1"
+          />
+        </div>
+        <div class="setting-group" id="player2-section">
+          <label for="player2-name">Ім'я гравця 2</label>
+          <input
+            type="text"
+            id="player2-name"
+            placeholder="Player 2"
+            value="Player 2"
+          />
+        </div>
+      </div>
+      <div class="settings-buttons">
+        <button class="btn btn-start" id="start-game-btn">Розпочати гру</button>
+        <button class="btn btn-reset" id="reset-settings-btn">
+          Скинути налаштування
+        </button>
+        <button class="btn btn-restart" id="restart-game-btn">
+          Рестарт гри
+        </button>
+      </div>
+    </section>
+    <section class="game-info">
+      <div class="info-card">
+        <h3>Таймер</h3>
+        <p id="timer">03:00</p>
+      </div>
+      <div class="info-card">
+        <h3>Ходи</h3>
+        <p id="moves">0</p>
+      </div>
+      <div class="info-card">
+        <h3>Раунд</h3>
+        <p id="current-round">1</p>
+      </div>
+      <div class="info-card">
+        <h3>Поточний гравець</h3>
+        <p id="current-player">Player 1</p>
+      </div>
+    </section>
+    <section class="scoreboard">
+      <h2 class="section-title">Результати гравців</h2>
+      <div class="scoreboard-grid">
+        <div class="player-score">
+          <h3 id="score-player1-name">Player 1</h3>
+          <p>Пари: <span id="player1-pairs">0</span></p>
+          <p>Ходи: <span id="player1-moves">0</span></p>
+        </div>
+        <div class="player-score" id="score-player2-block">
+          <h3 id="score-player2-name">Player 2</h3>
+          <p>Пари: <span id="player2-pairs">0</span></p>
+          <p>Ходи: <span id="player2-moves">0</span></p>
+        </div>
+      </div>
+    </section>
+    <main class="game-container">
+      <section class="game-board" id="game-board"></section>
+    </main>
+    <section class="round-results" id="round-results">
+      <h2 class="section-title">Статистика раундів</h2>
+      <div id="results-container"></div>
+    </section>
+    <div class="modal hidden" id="final-modal">
+      <div class="modal-content">
+        <h2>Гру завершено!</h2>
+        <p id="winner-text">Переможець: Player 1</p>
+        <button class="btn btn-start" id="close-modal-btn">Закрити</button>
+      </div>
     </div>
-
-    <div class="setting-group">
-      <label for="difficulty">Складність</label>
-      <select id="difficulty">
-        <option value="easy" selected>Easy (3 хв)</option>
-        <option value="normal">Normal (2 хв)</option>
-        <option value="hard">Hard (1 хв)</option>
-      </select>
-    </div>
-
-    <div class="setting-group">
-      <label for="players-count">Кількість гравців</label>
-      <select id="players-count">
-        <option value="1" selected>1 Player</option>
-        <option value="2">2 Players</option>
-      </select>
-    </div>
-
-    <div class="setting-group">
-      <label for="rounds">Кількість раундів</label>
-      <input type="number" id="rounds" min="1" value="1" />
-    </div>
-
-    <div class="setting-group">
-      <label for="player1-name">Ім'я гравця 1</label>
-      <input type="text" id="player1-name" placeholder="Player 1" value="Player 1" />
-    </div>
-
-    <!-- Player 2 name — ховається при 1 гравці -->
-    <div class="setting-group" id="player2-section">
-      <label for="player2-name">Ім'я гравця 2</label>
-      <input type="text" id="player2-name" placeholder="Player 2" value="Player 2" />
-    </div>
-
-  </div>
-
-  <div class="settings-buttons">
-    <button class="btn btn-start"   id="start-game-btn">Розпочати гру</button>
-    <button class="btn btn-reset"   id="reset-settings-btn">Скинути налаштування</button>
-    <button class="btn btn-restart" id="restart-game-btn">Рестарт гри</button>
-  </div>
-</section>
-
-<!-- GAME INFO -->
-<section class="game-info">
-  <div class="info-card">
-    <h3>Таймер</h3>
-    <p id="timer">03:00</p>
-  </div>
-  <div class="info-card">
-    <h3>Ходи</h3>
-    <p id="moves">0</p>
-  </div>
-  <div class="info-card">
-    <h3>Раунд</h3>
-    <p id="current-round">1</p>
-  </div>
-  <div class="info-card">
-    <h3>Поточний гравець</h3>
-    <p id="current-player">Player 1</p>
-  </div>
-</section>
-
-<!-- SCOREBOARD -->
-<section class="scoreboard">
-  <h2 class="section-title">Результати гравців</h2>
-  <div class="scoreboard-grid">
-
-    <div class="player-score">
-      <h3 id="score-player1-name">Player 1</h3>
-      <p>Пари: <span id="player1-pairs">0</span></p>
-      <p>Ходи: <span id="player1-moves">0</span></p>
-    </div>
-
-    <!-- Player 2 score — ховається при 1 гравці -->
-    <div class="player-score" id="score-player2-block">
-      <h3 id="score-player2-name">Player 2</h3>
-      <p>Пари: <span id="player2-pairs">0</span></p>
-      <p>Ходи: <span id="player2-moves">0</span></p>
-    </div>
-
-  </div>
-</section>
-
-<!-- GAME BOARD -->
-<main class="game-container">
-  <section class="game-board" id="game-board">
-    <!-- Cards generated by JS -->
-  </section>
-</main>
-
-<!-- ROUND RESULTS -->
-<section class="round-results" id="round-results">
-  <h2 class="section-title">Статистика раундів</h2>
-  <div id="results-container"></div>
-</section>
-
-<!-- FINAL MODAL -->
-<div class="modal hidden" id="final-modal">
-  <div class="modal-content">
-    <h2>Гру завершено!</h2>
-    <p id="winner-text">🏆 Переможець: Player 1</p>
-    <button class="btn btn-start" id="close-modal-btn">Закрити</button>
-  </div>
-</div>
-
-<script defer src="app.js"></script>
-</body>
+    <script defer src="app.js"></script>
+  </body>
 </html>

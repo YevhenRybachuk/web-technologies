@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>Slider</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="demo-container">
+      <div id="mySlider" class="slider-root"></div>
+      <div class="controls-panel">
+        <div class="config-group">
+          <span>Налаштування:</span>
+          <label>Швидкість (ms):</label>
+          <input type="number" id="speedInput" value="400" step="50" />
+          <label>Автоплей:</label>
+          <select id="autoplaySelect">
+            <option value="true">Увімкнено</option>
+            <option value="false" selected>Вимкнено</option>
+          </select>
+        </div>
+        <div class="config-group">
+          <label>Стрілки:</label>
+          <select id="arrowsSelect">
+            <option value="true">Показати</option>
+            <option value="false">Сховати</option>
+          </select>
+          <label>Точки:</label>
+          <select id="dotsSelect">
+            <option value="true">Показати</option>
+            <option value="false">Сховати</option>
+          </select>
+          <button id="reinitBtn" class="small-btn">Перестворити</button>
+        </div>
+      </div>
+    </div>
+    <script defer src="app.js"></script>
+  </body>
+</html>
