@@ -273,7 +273,7 @@ renderBoard();
 setupDropTargets();
 
 console.log(
-  "Kanban Board готовий! Використовуй Drag and Drop для переміщення завдань 🚀",
+  "Kanban Board готовий! Використовуй Drag and Drop для переміщення завдань",
 );
 
 document.querySelectorAll(".task-list").forEach((list) => {
